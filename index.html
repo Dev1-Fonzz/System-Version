@@ -5,76 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SISTEM MEMBERSHIP FONZZ 2025</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
     body {
-      background: linear-gradient(135deg, #e0f7e0, #fff3cd, #ffe0b2);
-      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #27ae60, #f1c40f);
+      color: #2c3e50;
+      padding: 20px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
     }
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
-    .header h1 {
-      font-size: 1.8em;
-      margin-bottom: 8px;
-      color: #27ae60;
-    }
-    .header p {
-      color: #e74c3c;
-      font-size: 0.95em;
-    }
-    .app-container {
-      width: 100%;
-      max-width: 900px;
-      height: 85vh;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    .card {
       background: white;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      margin: 40px 0;
     }
-    .notice {
+    h1 {
+      color: #27ae60;
+      margin-bottom: 15px;
+      font-size: 1.8em;
+    }
+    .icon {
+      font-size: 3em;
+      margin: 20px 0;
+      color: #f39c12;
+    }
+    .steps {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+      text-align: left;
+    }
+    .step {
+      margin: 12px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+    .step::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #27ae60;
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8em;
+    }
+    .btn {
+      display: inline-block;
+      background: #e74c3c;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #c0392b;
+    }
+    .note {
       background: #fff8e1;
       padding: 12px;
-      border-left: 4px solid #ffc107;
-      margin-top: 12px;
-      font-size: 0.9em;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.95em;
       color: #5d4037;
-      width: 100%;
-      max-width: 900px;
     }
-    @media (max-width: 600px) {
-      .app-container { height: 80vh; }
-      .header h1 { font-size: 1.4em; }
+    .browser-hint {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #7f8c8d;
     }
   </style>
 </head>
 <body>
-  <div class="header">
+  <div class="card">
     <h1>SISTEM MEMBERSHIP FONZZ 2025</h1>
-    <p>Sistem Pengurusan Identiti Membership FareezOnzz (SPIMF)</p>
+    <div class="icon">🔒</div>
+    <p><strong>Untuk pengalaman terbaik,</strong> sila akses sistem ini dalam <strong>Mode Penyamaran (Inkognito)</strong>.</p>
+
+    <div class="steps">
+      <p><strong>Langkah-langkah mudah:</strong></p>
+      <div class="step">Buka pelayar (Chrome, Edge, atau Firefox)</div>
+      <div class="step">Tekan kekunci <strong>Ctrl + Shift + N</strong> (Windows) atau <strong>Cmd + Shift + N</strong> (Mac)</div>
+      <div class="step">Tampal (paste) pautan berikut dalam tetingkap baharu:</div>
+    </div>
+
+    <a 
+      href="https://script.google.com/macros/s/AKfycbxktFr72Au77HWnhQbNedZIucwj94eX-6sIFonUIFh5hjtHbHHO8WoUrpiRNmYi2F3r/dev" 
+      target="_blank"
+      class="btn"
+    >
+      ➜ BUKA SISTEM DALAM TETINGKAP BAHARU
+    </a>
+
+    <div class="note">
+      ℹ️ Jika sistem masih tidak berfungsi, pastikan anda berada dalam <strong>tetingkap Inkognito</strong> (ikon topi & cermin mata akan kelihatan di sudut atas).
+    </div>
+
+    <div class="browser-hint">
+      Chrome / Edge: Ctrl+Shift+N | Firefox: Ctrl+Shift+P | Safari: Cmd+Shift+N
+    </div>
   </div>
 
-  <!-- Embed Web App GAS di sini -->
-  <iframe
-    src="https://script.google.com/macros/s/AKfycbxktFr72Au77HWnhQbNedZIucwj94eX-6sIFonUIFh5hjtHbHHO8WoUrpiRNmYi2F3r/dev"
-    class="app-container"
-    title="Sistem Membership FONZZ"
-    allow="clipboard-write"
-  ></iframe>
-
-  <div class="notice">
-    🔒 Sistem ini selamat & selaras dengan polisi privasi. Sokongan: admin@fonzz.com
+  <div style="text-align:center; color:white; opacity:0.8; font-size:0.9em;">
+    Sokongan: admin@fonzz.com | © 2025 FONZZ
   </div>
-
-  <script>
-    // Optional: Auto-resize iframe jika perlu (tapi biasanya tidak diperlukan untuk embed penuh)
-    // Google Apps Script tidak benarkan komunikasi luar iframe secara langsung kerana sandbox.
-  </script>
 </body>
 </html>
