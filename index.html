@@ -5,100 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SISTEM MEMBERSHIP FONZZ 2025</title>
   <style>
-    /* Tema: Hijau, Kuning, Putih, Jingga, Merah */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #e0f7e0, #fff3cd);
-      margin: 0;
+      background: linear-gradient(135deg, #e0f7e0, #fff3cd, #ffe0b2);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
-      color: #333;
     }
-    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
-    .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
-    .status.active { background: #d4edda; color: #155724; }
-    .status.inactive { background: #f8d7da; color: #721c24; }
-    .btn { padding: 10px 20px; background: #ffc107; border: none; border-radius: 5px; cursor: pointer; }
-    .btn-danger { background: #dc3545; color: white; }
-    .hidden { display: none; }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    .header h1 {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+      color: #27ae60;
+    }
+    .header p {
+      color: #e74c3c;
+      font-size: 0.95em;
+    }
+    .app-container {
+      width: 100%;
+      max-width: 900px;
+      height: 85vh;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      background: white;
+    }
+    .notice {
+      background: #fff8e1;
+      padding: 12px;
+      border-left: 4px solid #ffc107;
+      margin-top: 12px;
+      font-size: 0.9em;
+      color: #5d4037;
+      width: 100%;
+      max-width: 900px;
+    }
+    @media (max-width: 600px) {
+      .app-container { height: 80vh; }
+      .header h1 { font-size: 1.4em; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="header">
     <h1>SISTEM MEMBERSHIP FONZZ 2025</h1>
-    
-    <div id="loading">Memuatkan...</div>
-    <div id="app" class="hidden">
-      <h2>Selamat Datang, <span id="nama"></span>!</h2>
-      <div id="status" class="status"></div>
-      <p>Email: <span id="email"></span></p>
-      <p>No. Telefon: <span id="telefon"></span></p>
-      
-      <button class="btn" onclick="logout()">Log Keluar</button>
-    </div>
+    <p>Sistem Pengurusan Identiti Membership FareezOnzz (SPIMF)</p>
+  </div>
 
-    <div id="github-preview" class="hidden">
-      <p>⚠️ Anda sedang melihat <strong>preview di GitHub</strong>.</p>
-      <p>Untuk guna sistem penuh, sila akses melalui Web App Google Apps Script:</p>
-      <p><a href="https://script.google.com/macros/s/AKfycbxktFr72Au77HWnhQbNedZIucwj94eX-6sIFonUIFh5hjtHbHHO8WoUrpiRNmYi2F3r/exec" target="_blank">
-        🔗 Buka Sistem Rasmi
-      </a></p>
-    </div>
+  <!-- Embed Web App GAS di sini -->
+  <iframe
+    src="https://script.google.com/macros/s/AKfycbxktFr72Au77HWnhQbNedZIucwj94eX-6sIFonUIFh5hjtHbHHO8WoUrpiRNmYi2F3r/dev"
+    class="app-container"
+    title="Sistem Membership FONZZ"
+    allow="clipboard-write"
+  ></iframe>
+
+  <div class="notice">
+    🔒 Sistem ini selamat & selaras dengan polisi privasi. Sokongan: admin@fonzz.com
   </div>
 
   <script>
-    // Deteksi sama ada dijalankan dalam context Google Apps Script
-    const isGoogleAppsScript = typeof google !== 'undefined' && typeof google.script !== 'undefined';
-
-    if (isGoogleAppsScript) {
-      // Jalankan hanya dalam Web App GAS
-      document.getElementById('github-preview').classList.add('hidden');
-      document.getElementById('loading').classList.remove('hidden');
-      
-      // Fetch data pengguna dari backend GAS
-      google.script.run
-        .withSuccessHandler(renderData)
-        .withFailureHandler(showError)
-        .getUserData();
-    } else {
-      // Preview di GitHub
-      document.getElementById('loading').classList.add('hidden');
-      document.getElementById('github-preview').classList.remove('hidden');
-      document.getElementById('app').classList.add('hidden');
-    }
-
-    function renderData(data) {
-      if (data && data.nama) {
-        document.getElementById('nama').textContent = data.nama;
-        document.getElementById('email').textContent = data.email || '-';
-        document.getElementById('telefon').textContent = data.telefon || '-';
-        
-        const statusEl = document.getElementById('status');
-        if (data.status === 'active') {
-          statusEl.textContent = 'Status: AKTIF';
-          statusEl.className = 'status active';
-        } else {
-          statusEl.textContent = 'Status: TIDAK AKTIF';
-          statusEl.className = 'status inactive';
-        }
-        
-        document.getElementById('loading').classList.add('hidden');
-        document.getElementById('app').classList.remove('hidden');
-      } else {
-        showError('Data pengguna tidak dijumpai.');
-      }
-    }
-
-    function showError(err) {
-      document.getElementById('loading').textContent = 'Ralat: ' + (err.message || err);
-    }
-
-    function logout() {
-      if (isGoogleAppsScript) {
-        google.script.run.withSuccessHandler(() => {
-          window.close(); // atau redirect ke landing page
-        }).logout();
-      }
-    }
+    // Optional: Auto-resize iframe jika perlu (tapi biasanya tidak diperlukan untuk embed penuh)
+    // Google Apps Script tidak benarkan komunikasi luar iframe secara langsung kerana sandbox.
   </script>
 </body>
 </html>
